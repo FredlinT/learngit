@@ -1,5 +1,5 @@
-#工程目录示意及说明
-frontend/
+#工程目录示意及说明<br>
+frontend/<br>
 ---->addons/:用于每个工程自定义的view来满足特定的交互需求。同样通过自定义的manager将view注册到对应的APP上。使用时要在工程配置文件中将自定义的manager类加入ADDON_MANAGERS参数中。
 ---->util/:支撑实现相关服务
 ---->frontend_server.py:程序的主入口，可以根据指定的参数来启动对应的服务，对于每个服务的APP类一般都包含了app、celery_app、appbuilder。appbuilder在初始化时会将入ADDON_MANAGERS参数中包含的自定义manager类加载进来。
