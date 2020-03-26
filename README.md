@@ -21,16 +21,16 @@ frontend/<br>
 调试及部署
 -----
 
-(1)进入frontend/下，执行blade build,相关问题可以参见lucis工程的README
-(2)快速测试：初始化环境(主要是数据库的表，app/model.py为空且不使用ldap可以忽略):进入blade构建后的路径,FLASK_APPLICATION_CONFIG="***/test_config.py" FLASK_APP=frontend.**.app ./flask_tool fab create-db
-    启动http
-            server:进入blade构建后的路径,FLASK_APPLICATION_CONFIG="***test_config.py"
-                                                                                     ./frontend_server                                                                                  --module_path="frontend.**.app"
-                                                                                               --workers_num=1<br>
-    根据输出的访问路径，选择对应的服务在浏览器中打开即可进行测试
+(1)blade构建:进入frontend/下，执行blade build,相关问题可以参见lucis工程的README。<br>
+(2)调试<br>:
+>>初始化环境:主要是数据库的表，app/model.py为空且不使用ldap可以忽略,进入blade构建后的路径,FLASK_APPLICATION_CONFIG="***/test_config.py" FLASK_APP=frontend.**.app ./flask_tool fab create-db<br>
+    启动http server:进入blade构建后的路径,FLASK_APPLICATION_CONFIG="***test_config.py"./frontend_server  --module_path="frontend.**.app"  --workers_num=1。根据输出的访问路径，选择对应的服务在浏览器中打开即可进行测试。<br>
 (3)服务部署：在${JUMBO_ROOT}/etc/supervisor.d/目录下编写ini配置文件,执行supervisorctl update让配置生效并启动服务
 
     
-#spider_proxy用途：
+spider_proxy用途：
+-----
+
 (1)为pyspider爬虫中使用self.crawl()发起抓取请求失败但可以通过requests.get()抓取的url,搭建一个中间代理。<br>
 (2)请求用法参见http://10.134.13.101:5000/debug/forbes项目，将原url作为参数发送至该代理，该代理会将原请求的url通过requests.get()获得结果并返回response.text。<br>
+
