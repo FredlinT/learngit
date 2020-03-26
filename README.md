@@ -31,6 +31,6 @@ frontend/<br>
 spider_proxy用途：
 -----
 
-(1)为pyspider爬虫中使用self.crawl()发起抓取请求失败但可以通过requests.get()抓取的url,搭建一个中间代理。<br>
-(2)请求用法参见http://10.134.13.101:5000/debug/forbes项目，将原url作为参数发送至该代理，该代理会将原请求的url通过requests.get()获得结果并返回response.text。<br>
+(1)该工程时为pyspider爬虫中使用self.crawl()发起抓取请求失败但可以通过requests.get()抓取的url而搭建建一个中间代理服务。<br>
+(2)用法为将原url作为参数发送至该代理，该服务会将原请求的url通过requests.get()获得结果并返回response.text。具体用法可参考http://10.134.13.101:5000/debug/forbes项目。<br>
 
